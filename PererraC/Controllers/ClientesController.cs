@@ -19,7 +19,7 @@ namespace PererraC.Controllers
         // GET: Clientes
         public async Task<ActionResult> Index()
         {
-            return View(await db.Clientes.ToListAsync());
+            return View(await db.Clientes.ToListAsync()) ;
         }
 
         // GET: Clientes/Details/5
