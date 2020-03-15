@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PererraC.Models.Adopciones>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.NombreCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.NombreCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Perros.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEntrega)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.NombreCompleto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.NombreCompleto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Perros.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEntrega)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { item.PerroId, item.EmpleadoId, item.ClienteId }) |
+            @Html.ActionLink("Details", "Details", new { item.PerroId, item.EmpleadoId, item.ClienteId }) |
+            @Html.ActionLink("Delete", "Delete", new { item.PerroId, item.EmpleadoId, item.ClienteId })
+        </td>
+    </tr>
+}
+
+</table>
